@@ -10,7 +10,7 @@ export default function HomePage() {
   const shopByCategory = [
     { gender: "women" as const, label: "Femme", image: "/products/w-louboutin-white.jpg" },
     { gender: "men" as const, label: "Homme", image: "/products/m-ralph-white.jpg" },
-    { gender: "kids" as const, label: "Enfant", image: "/products/m-tommy-flag-duo.jpg" },
+    { gender: "kids" as const, label: "Enfant", image: "kidscategory.webp" },
   ];
 
   const shopByType = [
@@ -56,7 +56,7 @@ export default function HomePage() {
 
           <div className="relative aspect-[4/5] lg:aspect-[3/4] bg-brand-800">
             <Image
-              src="/products/w-louboutin-white.jpg"
+              src="hero.png"
               alt="R&B Collection Femme"
               fill
               sizes="(min-width: 1024px) 600px, 100vw"
