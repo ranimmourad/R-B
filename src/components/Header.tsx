@@ -22,14 +22,6 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 bg-white border-b border-neutral-200">
-      {/* Top announcement bar */}
-      <div className="bg-brand-700 text-white text-center text-xs sm:text-sm py-2 px-4">
-        <span className="tracking-wider">
-          Livraison rapide partout en Tunisie · Commande en inbox chez R&B
-        </span>
-      </div>
-
-      {/* Main nav */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         <Logo />
 

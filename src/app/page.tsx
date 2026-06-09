@@ -15,28 +15,36 @@ export default function HomePage() {
 
   const shopByType = [
     { cat: "t-shirts" as const, image: "/products/w-vogue-white.jpg" },
-    { cat: "jeans" as const, image: "/products/m-ralph-duo.jpg" },
-    { cat: "hoodies" as const, image: "/products/m-ck-duo.jpg" },
-    { cat: "jackets" as const, image: "/products/w-tommy-crest-black.jpg" },
+    { cat: "jeans" as const, image: "" },
+    { cat: "hoodies" as const, image: "" },
+    { cat: "jackets" as const, image: "" },
   ];
 
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-brand-700 text-brand-cream overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <p className="text-xs sm:text-sm uppercase tracking-widest opacity-80 mb-4">
+      <section className="relative min-h-[85vh] overflow-hidden">
+        <Image
+          src="hero.png"
+          alt="R&B Collection"
+          fill
+          sizes="100vw"
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-brand-700/50" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-20">
+          <div className="max-w-2xl">
+            <p className="text-xs sm:text-sm uppercase tracking-widest text-brand-cream/80 mb-4">
               R&B Clothing Store · Tunisie
             </p>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-wide mb-6">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-wide text-brand-cream mb-6">
               Mode Homme & Femme.
               <br />
               Qualité premium, prix imbattables.
             </h1>
-            <p className="text-base sm:text-lg opacity-85 mb-8 max-w-xl">
+            <p className="text-base sm:text-lg text-brand-cream/85 mb-8 max-w-xl">
               Découvrez notre sélection de t-shirts, chemises, jeans, vestes et accessoires.
-              Livraison rapide partout en Tunisie.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -52,17 +60,6 @@ export default function HomePage() {
                 Nouveautés
               </Link>
             </div>
-          </div>
-
-          <div className="relative aspect-[4/5] lg:aspect-[3/4] bg-brand-800">
-            <Image
-              src="hero.png"
-              alt="R&B Collection Femme"
-              fill
-              sizes="(min-width: 1024px) 600px, 100vw"
-              className="object-cover"
-              priority
-            />
           </div>
         </div>
       </section>
@@ -203,25 +200,6 @@ export default function HomePage() {
           <ProductGrid products={newArrivals} />
         </section>
       )}
-
-      {/* CTA */}
-      <section className="bg-brand-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-          <h2 className="font-serif text-3xl sm:text-4xl text-brand-700 mb-4">
-            Commande en inbox chez R&B
-          </h2>
-          <p className="text-neutral-600 max-w-2xl mx-auto mb-6">
-            Contactez-nous directement par message privé sur Instagram, Facebook ou WhatsApp
-            pour finaliser votre commande. Livraison rapide partout en Tunisie.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center px-7 py-3 btn-brand text-sm uppercase tracking-widest font-medium"
-          >
-            Nous contacter
-          </Link>
-        </div>
-      </section>
     </>
   );
 }
