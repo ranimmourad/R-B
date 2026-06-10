@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useCallback, ReactNode } from "react";
-import type { Product } from "./products";
+import type { Product } from "./types";
 
 interface FavoritesContextType {
   favorites: Product[];
