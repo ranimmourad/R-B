@@ -1,24 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PRODUCTS, CATEGORY_LABELS } from "@/lib/products";
+import { PRODUCTS } from "@/lib/products";
 import ProductGrid from "@/components/ProductGrid";
 
 export default function HomePage() {
-  const featured = PRODUCTS.filter((p) => p.featured).slice(0, 8);
   const newArrivals = PRODUCTS.filter((p) => p.isNew).slice(0, 4);
-
-  const shopByCategory = [
-    { gender: "women" as const, label: "Femme", image: "/products/w-louboutin-white.jpg" },
-    { gender: "men" as const, label: "Homme", image: "/products/m-ralph-white.jpg" },
-    { gender: "kids" as const, label: "Enfant", image: "kidscategory.webp" },
-  ];
-
-  const shopByType = [
-    { cat: "t-shirts" as const, image: "/products/w-vogue-white.jpg" },
-    { cat: "jeans" as const, image: "" },
-    { cat: "hoodies" as const, image: "" },
-    { cat: "jackets" as const, image: "" },
-  ];
 
   return (
     <>
@@ -32,7 +18,6 @@ export default function HomePage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-20">
           <div className="w-1/2">
             <p className="text-xs sm:text-sm uppercase tracking-widest text-brand-700/70 mb-4">
@@ -101,88 +86,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SHOP BY GENDER */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="flex items-end justify-between mb-8">
-          <div>
-            <h2 className="font-serif text-3xl text-brand-700">Shop par catégorie</h2>
-            <p className="text-sm text-neutral-500 mt-1">Femme · Homme · Enfant</p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {shopByCategory.map((c) => (
-            <Link
-              key={c.gender}
-              href={`/shop?gender=${c.gender}`}
-              className="group relative aspect-[3/4] overflow-hidden bg-neutral-50 border border-neutral-200 hover:border-brand-700 transition-colors"
-            >
-              <Image
-                src={c.image}
-                alt={c.label}
-                fill
-                sizes="(min-width: 640px) 33vw, 100vw"
-                className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-brand-700/20" />
-              <div className="absolute inset-0 flex items-end p-6">
-                <div className="bg-white px-5 py-3">
-                  <p className="text-xs uppercase tracking-widest text-neutral-500">Collection</p>
-                  <p className="font-serif text-2xl text-brand-700">{c.label}</p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* FEATURED */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="flex items-end justify-between mb-8">
-          <div>
-            <h2 className="font-serif text-3xl text-brand-700">Sélection R&B</h2>
-            <p className="text-sm text-neutral-500 mt-1">Nos coups de cœur du moment</p>
-          </div>
-          <Link
-            href="/shop"
-            className="hidden sm:inline text-xs uppercase tracking-widest text-brand-700 hover:underline"
-          >
-            Tout voir →
-          </Link>
-        </div>
-        <ProductGrid products={featured} />
-      </section>
-
-      {/* SHOP BY TYPE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="font-serif text-3xl text-brand-700 mb-8">Shop par type</h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {shopByType.map((c) => (
-            <Link
-              key={c.cat}
-              href={`/shop?category=${c.cat}`}
-              className="group relative aspect-square overflow-hidden bg-neutral-50 border border-neutral-200 hover:border-brand-700 transition-colors"
-            >
-              <Image
-                src={c.image}
-                alt={CATEGORY_LABELS[c.cat]}
-                fill
-                sizes="(min-width: 1024px) 25vw, 50vw"
-                className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
-              />
-              <div className="absolute bottom-3 left-3 right-3 bg-white px-3 py-2 text-center">
-                <span className="text-xs uppercase tracking-widest text-brand-700">
-                  {CATEGORY_LABELS[c.cat]}
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
       {/* NEW ARRIVALS */}
       {newArrivals.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="flex items-end justify-between mb-8">
             <div>
               <h2 className="font-serif text-3xl text-brand-700">Nouveautés</h2>
