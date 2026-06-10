@@ -32,30 +32,30 @@ export default function HomePage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-brand-700/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-20">
-          <div className="max-w-2xl">
-            <p className="text-xs sm:text-sm uppercase tracking-widest text-brand-cream/80 mb-4">
+          <div className="w-1/2">
+            <p className="text-xs sm:text-sm uppercase tracking-widest text-brand-700/70 mb-4">
               R&B Clothing Store · Tunisie
             </p>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-wide text-brand-cream mb-6">
+            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl leading-tight tracking-wide text-brand-700 mb-6">
               Mode Homme & Femme.
               <br />
               Qualité premium, prix imbattables.
             </h1>
-            <p className="text-base sm:text-lg text-brand-cream/85 mb-8 max-w-xl">
+            <p className="text-sm sm:text-lg text-neutral-600 mb-8 max-w-md">
               Découvrez notre sélection de t-shirts, chemises, jeans, vestes et accessoires.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/shop"
-                className="inline-flex items-center px-7 py-3 bg-brand-cream text-brand-700 text-sm uppercase tracking-widest font-medium hover:bg-white transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-brand-700 text-white text-xs sm:text-sm uppercase tracking-widest font-medium hover:bg-brand-800 transition-colors"
               >
                 Découvrir la boutique
               </Link>
               <Link
                 href="/new-arrivals"
-                className="inline-flex items-center px-7 py-3 border border-brand-cream/60 text-brand-cream text-sm uppercase tracking-widest hover:bg-brand-cream hover:text-brand-700 transition-colors"
+                className="inline-flex items-center px-6 py-3 border border-brand-700 text-brand-700 text-xs sm:text-sm uppercase tracking-widest hover:bg-brand-700 hover:text-white transition-colors"
               >
                 Nouveautés
               </Link>
