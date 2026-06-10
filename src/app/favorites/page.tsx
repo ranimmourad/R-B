@@ -1,3 +1,4 @@
+"use client";
 import { useFavorites } from "@/lib/favorites-context";
 import ProductGrid from "@/components/ProductGrid";
 import Link from "next/link";
